@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Toolkit & Idea Board</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="light-mode">
+
+<!-- NAVBAR -->
+<nav class="navbar">
+
+<div class="nav-left">
+<img src="ucsc.png" class="logo">
+<h2>Student Toolkit</h2>
+</div>
+
+<ul class="nav-menu">
+<li onclick="showSection('dashboard')">Dashboard</li>
+<li onclick="showSection('ideas')">Idea Board</li>
+<li onclick="showSection('gpa')">GPA Calculator</li>
+<li onclick="showSection('timer')">Study Timer</li>
+</ul>
+
+<button id="themeToggle">🌙</button>
+
+</nav>
+
+<div class="layout">
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+
+<h3>Upcoming Events</h3>
+
+<ul class="events">
+<li>Assignment Due - Mar 15</li>
+<li>Database Quiz - Mar 18</li>
+<li>Group Project - Mar 22</li>
+<li>Final Exam - Apr 05</li>
+</ul>
+
+</aside>
+
+<!-- MAIN CONTENT -->
+<main class="content">
+
+<!-- DASHBOARD -->
+<section id="dashboard" class="section">
+<h1>Welcome to Student Toolkit</h1>
+<p>Use the tools above to manage your studies and collaborate with your team.</p>
+</section>
+
+
+<!-- GPA CALCULATOR -->
+<section id="gpa" class="section hidden">
+
+<h2>GPA Calculator</h2>
+
+<div class="input-group">
+<input type="number" id="c1" placeholder="Course Credits">
+<input type="number" id="g1" placeholder="Grade">
+</div>
+
+<div class="input-group">
+<input type="number" id="c2" placeholder="Course Credits">
+<input type="number" id="g2" placeholder="Grade">
+</div>
+
+<div class="input-group">
+<input type="number" id="c3" placeholder="Course Credits">
+<input type="number" id="g3" placeholder="Grade">
+</div>
+
+<button onclick="calculateGPA()">Calculate GPA</button>
+
+<h3 id="gpaResult"></h3>
+
+</section>
+
+
+<!-- POMODORO TIMER -->
+<section id="timer" class="section hidden">
+
+<h2>Pomodoro Study Timer</h2>
+
+<h1 id="time">25:00</h1>
+
+<button onclick="startTimer()">Start</button>
+<button onclick="resetTimer()">Reset</button>
+
+</section>
+
+
+<!-- IDEA BOARD -->
+<section id="ideas" class="section hidden">
+
+<h2>Group Idea Board</h2>
+
+<div class="idea-grid">
+
+<div class="card">
+
+<h3>Add Team Member</h3>
+
+<input type="text" id="newMemberInput" placeholder="Enter member name">
+<button id="addMemberBtn">Add</button>
+
+<ul id="memberList"></ul>
+
+</div>
+
+<div class="card">
+
+<h3>Submit Idea</h3>
+
+<select id="memberSelect">
+<option value="" disabled selected>Select member</option>
+</select>
+
+<textarea id="ideaInput" placeholder="Your idea..."></textarea>
+
+<button id="submitIdeaBtn">Submit Idea</button>
+
+</div>
+
+</div>
+
+<div class="idea-feed">
+
+<h3>Group Ideas</h3>
+
+<input type="text" id="filterInput" placeholder="Filter ideas...">
+
+<p>Total Ideas: <span id="totalIdeas">0</span></p>
+
+<div id="ideasList"></div>
+
+<button id="clearAllBtn">Clear All Ideas</button>
+
+</div>
+
+</section>
+
+</main>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
