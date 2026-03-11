@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UCSC Student Toolkit</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <div class="logo-placeholder">UCSC LOGO</div>
+            <h1>Student Toolkit</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#gpa-section">GPA Calculator</a></li>
+            <li><a href="#timer-section">Study Timer</a></li>
+        </ul>
+        <div class="dark-mode-container">
+            <span>Dark Mode</span>
+            <label class="switch">
+                <input type="checkbox" id="dark-mode-toggle">
+                <span class="slider round"></span>
+            </label>
+        </div>
+    </nav>
+
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Upcoming Events</h2>
+            <ul class="event-list">
+                <li class="event-item">Midterm Week - March 15</li>
+                <li class="event-item">Career Fair - March 22</li>
+                <li class="event-item">Spring Break - April 5</li>
+                <li class="event-item">Final Projects Due - May 10</li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <section id="gpa-section" class="card fade-in">
+                <h2>GPA Calculator</h2>
+                <div id="course-list">
+                    <div class="course-row">
+                        <input type="number" placeholder="Credits" class="credits" min="0">
+                        <select class="grade">
+                            <option value="4.0">A</option>
+                            <option value="3.7">A-</option>
+                            <option value="3.3">B+</option>
+                            <option value="3.0">B</option>
+                            <option value="2.7">B-</option>
+                            <option value="2.3">C+</option>
+                            <option value="2.0">C</option>
+                            <option value="1.7">C-</option>
+                            <option value="1.3">D+</option>
+                            <option value="1.0">D</option>
+                            <option value="0.0">F</option>
+                        </select>
+                    </div>
+                </div>
+                <button id="add-course" class="btn-secondary">Add Course</button>
+                <button id="calculate-gpa" class="btn-primary">Calculate GPA</button>
+                <div id="gpa-result" class="result-display">Overall GPA: --</div>
+            </section>
+
+            <section id="timer-section" class="card fade-in">
+                <h2>Pomodoro Study Timer</h2>
+                <div class="timer-display" id="timer">25:00</div>
+                <div class="timer-controls">
+                    <button id="start-timer" class="btn-primary">Start</button>
+                    <button id="reset-timer" class="btn-secondary">Reset</button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
